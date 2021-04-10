@@ -26,6 +26,6 @@ jobs:
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
-      - run: echo "🎉 The job was auto triggered by a ${{ github.event_name }} event."
+      - run: echo "🎉 The job was triggered by a ${{ github.event_name }} event."
       - run: echo "actor = ${{ github.actor }}"
       - run: echo "time = ${{ steps.current-time.outputs.time }}"
