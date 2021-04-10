@@ -11,14 +11,15 @@ jobs:
         id: update-google-sheet
         uses: jroehl/gsheet.action@v1.0.0
         with:
-          spreadsheetId: 1eNqjSq4N1yh2IeiJVyj8hExmaNxZcGckGH0hn-kgfHo
+          # spreadsheetId: 1eNqjSq4N1yh2IeiJVyj8hExmaNxZcGckGH0hn-kgfHo
+          spreadsheetId: 1DO_BraTkBxD_vt-7tCFX5bfoK2NiNRHr5e0zVuXW-uk
           commands: |
             [
               { 
                 "command": "appendData", 
                 "args": { 
                   "data": [["A1", "A2", "A3"]], 
-                  "worksheetTitle": "homework",
+                  "worksheetTitle": "Groupings",
                   "minCol": 2
                 } 
               }
