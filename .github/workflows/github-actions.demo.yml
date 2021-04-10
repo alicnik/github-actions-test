@@ -12,7 +12,7 @@ jobs:
         uses: jroehl/gsheet.action@v1.0.0
         with:
           spreadsheetId: 1eNqjSq4N1yh2IeiJVyj8hExmaNxZcGckGH0hn-kgfHo
-          commands: [{ "command": "appendData", "args": { "data": [["A1", "A2", "A3"]] } }]
+          commands: | [{ "command": "appendData", "args": { "data": [["A1", "A2", "A3"]] } }]
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
