@@ -12,10 +12,15 @@ jobs:
         uses: jroehl/gsheet.action@v1.0.0
         with:
           spreadsheetId: 1eNqjSq4N1yh2IeiJVyj8hExmaNxZcGckGH0hn-kgfHo
-          worksheetTitle: homework
           commands: |
             [
-              { "command": "appendData", "args": { "data": [["A1", "A2", "A3"]] } }
+              { 
+                "command": "appendData", 
+                "args": { 
+                  "data": [["A1", "A2", "A3"]], 
+                  "worksheetTitle": "homework" 
+                } 
+              }
             ]
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
