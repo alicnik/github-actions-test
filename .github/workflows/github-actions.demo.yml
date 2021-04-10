@@ -18,7 +18,8 @@ jobs:
                 "command": "appendData", 
                 "args": { 
                   "data": [["A1", "A2", "A3"]], 
-                  "worksheetTitle": "homework" 
+                  "worksheetTitle": "homework",
+                  "minCol": 2
                 } 
               }
             ]
