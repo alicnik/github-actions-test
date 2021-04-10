@@ -5,10 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get current time
-        uses: 1466587594/get-current-time@v2
         id: current-time
+        uses: 1466587594/get-current-time@v2
+      - name: Update Google Sheets
+        id: update-google-sheet
+        uses: jroehl/gsheet.action@v1.0.0
         with:
-          format: DDMMYY-HH:MM
+          spreadsheetId: 1eNqjSq4N1yh2IeiJVyj8hExmaNxZcGckGH0hn-kgfHo
+          commands: [{ 'command': 'appendData', 'args': { 'data': [['A1', 'A2', 'A3']] } }]
+        env:
+          GSHEET_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_EMAIL }}
+          GSHEET_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "actor = ${{ github.actor }}"
       - run: echo "time = ${{ steps.current-time.outputs.time }}"
